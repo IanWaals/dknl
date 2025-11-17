@@ -25,6 +25,9 @@
             this.trbChannel2iwaa = new System.Windows.Forms.TrackBar();
             this.lblChannel3Value = new System.Windows.Forms.Label();
             this.trbChannel3iwaa = new System.Windows.Forms.TrackBar();
+            this.btnLight1ToggleIwaa = new System.Windows.Forms.Button();
+            this.btnLight2ToggleIwaa = new System.Windows.Forms.Button();
+            this.btnLight3ToggleIwaa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trbChannel1iwaa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbChannel2iwaa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbChannel3iwaa)).BeginInit();
@@ -100,9 +103,42 @@
             this.trbChannel3iwaa.TickFrequency = 25;
             this.trbChannel3iwaa.Scroll += new System.EventHandler(this.trbChannel3iwaa_Scroll);
             // 
+            // btnLight1ToggleIwaa
+            // 
+            this.btnLight1ToggleIwaa.Location = new System.Drawing.Point(30, 314);
+            this.btnLight1ToggleIwaa.Name = "btnLight1ToggleIwaa";
+            this.btnLight1ToggleIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnLight1ToggleIwaa.TabIndex = 7;
+            this.btnLight1ToggleIwaa.Text = "L1";
+            this.btnLight1ToggleIwaa.UseVisualStyleBackColor = true;
+            this.btnLight1ToggleIwaa.Click += new System.EventHandler(this.btnLight1ToggleIwaa_Click);
+            // 
+            // btnLight2ToggleIwaa
+            // 
+            this.btnLight2ToggleIwaa.Location = new System.Drawing.Point(139, 314);
+            this.btnLight2ToggleIwaa.Name = "btnLight2ToggleIwaa";
+            this.btnLight2ToggleIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnLight2ToggleIwaa.TabIndex = 8;
+            this.btnLight2ToggleIwaa.Text = "L2";
+            this.btnLight2ToggleIwaa.UseVisualStyleBackColor = true;
+            this.btnLight2ToggleIwaa.Click += new System.EventHandler(this.btnLight2ToggleIwaa_Click);
+            // 
+            // btnLight3ToggleIwaa
+            // 
+            this.btnLight3ToggleIwaa.Location = new System.Drawing.Point(243, 314);
+            this.btnLight3ToggleIwaa.Name = "btnLight3ToggleIwaa";
+            this.btnLight3ToggleIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnLight3ToggleIwaa.TabIndex = 9;
+            this.btnLight3ToggleIwaa.Text = "L3";
+            this.btnLight3ToggleIwaa.UseVisualStyleBackColor = true;
+            this.btnLight3ToggleIwaa.Click += new System.EventHandler(this.btnLight3ToggleIwaa_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(380, 332);
+            this.ClientSize = new System.Drawing.Size(380, 450);
+            this.Controls.Add(this.btnLight3ToggleIwaa);
+            this.Controls.Add(this.btnLight2ToggleIwaa);
+            this.Controls.Add(this.btnLight1ToggleIwaa);
             this.Controls.Add(this.lblChannel3Value);
             this.Controls.Add(this.trbChannel3iwaa);
             this.Controls.Add(this.lblChannel2Value);
@@ -126,5 +162,8 @@
         private System.Windows.Forms.TrackBar trbChannel2iwaa;
         private System.Windows.Forms.Label lblChannel3Value;
         private System.Windows.Forms.TrackBar trbChannel3iwaa;
+        private System.Windows.Forms.Button btnLight1ToggleIwaa;
+        private System.Windows.Forms.Button btnLight2ToggleIwaa;
+        private System.Windows.Forms.Button btnLight3ToggleIwaa;
     }
 }
