@@ -12,16 +12,14 @@ namespace DMXControl
         Thread dmxThread;
         bool isRunning = false;
 
-        // Store the actual values when lights are on
-        private byte[] savedValues = new byte[9]; // Store values for channels 0-8
-        private bool light1Enabled = true;
-        private bool light2Enabled = true;
-        private bool light3Enabled = true;
+        private byte[] savedDmxData = new byte[9];
+        bool lightsTogglePower = true;
 
         public Form1()
         {
             InitializeComponent();
-            dmxPort = new SerialPort("COM12", 250000, Parity.None, 8, StopBits.Two);
+            dmxPort = new SerialPort("COM13", 250000, Parity.None, 8, StopBits.Two);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,6 +27,8 @@ namespace DMXControl
             try
             {
                 dmxPort.Open();
+
+
 
                 // Start the continuous DMX transmission thread
                 isRunning = true;
@@ -110,120 +110,71 @@ namespace DMXControl
             }
         }
 
-        // Light 1 Controls (Channels 1-3)
         private void trbChannel1Iwaa_Scroll(object sender, EventArgs e)
         {
-            savedValues[0] = (byte)trbChannel1iwaa.Value;
-            if (light1Enabled)
-            {
-                dmxData[0] = savedValues[0];
-            }
+            // Update DMX channel 1 (array index 0)
+            dmxData[0] = (byte)trbChannel1iwaa.Value;
+            savedDmxData[0] = (byte)dmxData[0];
 
+            // Update the label to show current value
             if (lblChannel1Value != null)
             {
-                lblChannel1Value.Text = $"Channel 1: {savedValues[0]}";
+                lblChannel1Value.Text = $"Channel 1: {dmxData[0]}";
             }
+
+            // No need to call SendDMX() here - the background thread handles it
         }
 
-        private void btnToggleLight1_Click(object sender, EventArgs e)
-        {
-            light1Enabled = !light1Enabled;
-
-            if (light1Enabled)
-            {
-                // Turn on - restore saved values
-                dmxData[0] = savedValues[0];
-                dmxData[1] = savedValues[1];
-                dmxData[2] = savedValues[2];
-                btnToggleLight1.Text = "Light 1: ON";
-                btnToggleLight1.BackColor = System.Drawing.Color.LightGreen;
-            }
-            else
-            {
-                // Turn off - set to 0
-                dmxData[0] = 0;
-                dmxData[1] = 0;
-                dmxData[2] = 0;
-                btnToggleLight1.Text = "Light 1: OFF";
-                btnToggleLight1.BackColor = System.Drawing.Color.LightGray;
-            }
-        }
-
-        // Light 2 Controls (Channels 4-6)
         private void trbChannel2_Scroll(object sender, EventArgs e)
         {
-            savedValues[3] = (byte)trbChannel2iwaa.Value;
-            if (light2Enabled)
-            {
-                dmxData[3] = savedValues[3];
-            }
+            dmxData[1] = (byte)trbChannel2iwaa.Value;
+            savedDmxData[1] =(byte)dmxData[1];
 
             if (lblChannel2Value != null)
             {
-                lblChannel2Value.Text = $"Channel 4: {savedValues[3]}";
+                lblChannel2Value.Text = $"Channel 2: {dmxData[1]}";
             }
         }
 
-        private void btnToggleLight2_Click(object sender, EventArgs e)
-        {
-            light2Enabled = !light2Enabled;
-
-            if (light2Enabled)
-            {
-                // Turn on - restore saved values
-                dmxData[3] = savedValues[3];
-                dmxData[4] = savedValues[4];
-                dmxData[5] = savedValues[5];
-                btnToggleLight2.Text = "Light 2: ON";
-                btnToggleLight2.BackColor = System.Drawing.Color.LightGreen;
-            }
-            else
-            {
-                // Turn off - set to 0
-                dmxData[3] = 0;
-                dmxData[4] = 0;
-                dmxData[5] = 0;
-                btnToggleLight2.Text = "Light 2: OFF";
-                btnToggleLight2.BackColor = System.Drawing.Color.LightGray;
-            }
-        }
-
-        // Light 3 Controls (Channels 7-9)
         private void trbChannel3iwaa_Scroll(object sender, EventArgs e)
         {
-            savedValues[6] = (byte)trbChannel3iwaa.Value;
-            if (light3Enabled)
-            {
-                dmxData[6] = savedValues[6];
-            }
+            dmxData[2] = (byte)trbChannel3iwaa.Value;
+            savedDmxData[2] = (byte)dmxData[2];
 
             if (lblChannel3Value != null)
             {
-                lblChannel3Value.Text = $"Channel 7: {savedValues[6]}";
+                lblChannel3Value.Text = $"Channel 3: {dmxData[2]}";
             }
         }
 
-        private void btnToggleLight3_Click(object sender, EventArgs e)
+        private void btnTogglePowerIwaa_Click(object sender, EventArgs e)
         {
-            light3Enabled = !light3Enabled;
+            if (lightsTogglePower)
+            {
+                dmxData[0] = 0;
+                dmxData[1] = 0;
+                dmxData[2] = 0;
 
-            if (light3Enabled)
+                trbChannel1iwaa.Enabled = false;
+                trbChannel2iwaa.Enabled = false;
+                trbChannel3iwaa.Enabled = false;
+
+                btnTogglePowerIwaa.Text = "turned off";
+                lightsTogglePower = false;
+            } else
             {
-                // Turn on - restore saved values
-                dmxData[6] = savedValues[6];
-                dmxData[7] = savedValues[7];
-                dmxData[8] = savedValues[8];
-                btnToggleLight3.Text = "Light 3: ON";
-                btnToggleLight3.BackColor = System.Drawing.Color.LightGreen;
-            }
-            else
-            {
-                // Turn off - set to 0
-                dmxData[6] = 0;
-                dmxData[7] = 0;
-                dmxData[8] = 0;
-                btnToggleLight3.Text = "Light 3: OFF";
-                btnToggleLight3.BackColor = System.Drawing.Color.LightGray;
+                dmxData[0] = (byte)savedDmxData[0];
+                dmxData[1] = (byte)savedDmxData[1];
+                dmxData[2] = (byte)savedDmxData[2];
+
+                trbChannel1iwaa.Enabled = true;
+                trbChannel2iwaa.Enabled = true;
+                trbChannel3iwaa.Enabled = true;
+
+                btnTogglePowerIwaa.Text = "turned on";
+                lightsTogglePower = true;
+
+                SendDMXFrame();
             }
         }
     }
