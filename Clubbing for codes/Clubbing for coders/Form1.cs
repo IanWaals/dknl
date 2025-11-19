@@ -188,7 +188,7 @@ namespace Clubbing_for_coders
             // Update the label to show current value
             if (lblRedValueIwaa != null)
             {
-                lblRedValueIwaa.Text = $"Channel 1: {dmxData[0]}";
+                lblRedValueIwaa.Text = $"Red: {dmxData[0]}";
             }
 
             // No need to call SendDMX() here - the background thread handles it
@@ -203,7 +203,7 @@ namespace Clubbing_for_coders
             // Update the label to show current value
             if (lblGreenValue != null)
             {
-                lblGreenValue.Text = $"Channel 1: {dmxData[1]}";
+                lblGreenValue.Text = $"Green: {dmxData[1]}";
             }
 
             // No need to call SendDMX() here - the background thread handles it
@@ -218,7 +218,7 @@ namespace Clubbing_for_coders
             // Update the label to show current value
             if (lblBlueValue != null)
             {
-                lblBlueValue.Text = $"Channel 1: {dmxData[2]}";
+                lblBlueValue.Text = $"Blue: {dmxData[2]}";
             }
 
             // No need to call SendDMX() here - the background thread handles it
@@ -301,6 +301,11 @@ namespace Clubbing_for_coders
             // Reset button
             btnFlashLightsIwaa.Text = "Make the lights flash";
             btnFlashLightsIwaa.Click += btnFlashLightsIwaa_Click;
+        }
+
+        private void trbFlashIntervalIwaa_Scroll(object sender, EventArgs e)
+        {
+            lblFlashIntervalIwaa.Text = trbFlashIntervalIwaa.Value.ToString();
         }
     }
 }

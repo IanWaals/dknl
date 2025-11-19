@@ -198,6 +198,7 @@
             this.trbFlashIntervalIwaa.Size = new System.Drawing.Size(242, 56);
             this.trbFlashIntervalIwaa.TabIndex = 9;
             this.trbFlashIntervalIwaa.Value = 100;
+            this.trbFlashIntervalIwaa.Scroll += new System.EventHandler(this.trbFlashIntervalIwaa_Scroll);
             // 
             // lblFlashingIwaa
             // 
