@@ -38,6 +38,13 @@
             this.lblToControllerIwaa = new System.Windows.Forms.Label();
             this.lblTitleIwaa = new System.Windows.Forms.Label();
             this.tbpDmxControllerIwaa = new System.Windows.Forms.TabPage();
+            this.btnColorYellowIwaa = new System.Windows.Forms.Button();
+            this.btnColorOrangeIwaa = new System.Windows.Forms.Button();
+            this.btnColorPurpleIwaa = new System.Windows.Forms.Button();
+            this.btnColorBlueIwaa = new System.Windows.Forms.Button();
+            this.btnColorWhiteIwaa = new System.Windows.Forms.Button();
+            this.btnColorGreenIwaa = new System.Windows.Forms.Button();
+            this.btnColorRedIwaa = new System.Windows.Forms.Button();
             this.lblFlashIntervalIwaa = new System.Windows.Forms.Label();
             this.trbFlashIntervalIwaa = new System.Windows.Forms.TrackBar();
             this.lblFlashingIwaa = new System.Windows.Forms.Label();
@@ -51,6 +58,8 @@
             this.trbRedParIwaa = new System.Windows.Forms.TrackBar();
             this.tbpSavedShowsIwaa = new System.Windows.Forms.TabPage();
             this.tbpTimelineIwaa = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnPlayIwaa = new System.Windows.Forms.Button();
             this.tbcPagesIwaa.SuspendLayout();
             this.tbpHomepageIwaa.SuspendLayout();
             this.tbpDmxControllerIwaa.SuspendLayout();
@@ -58,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trbGreenParIwaa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbBlueParIwaa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbRedParIwaa)).BeginInit();
+            this.tbpSavedShowsIwaa.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcPagesIwaa
@@ -161,6 +171,13 @@
             // 
             // tbpDmxControllerIwaa
             // 
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnColorYellowIwaa);
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnColorOrangeIwaa);
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnColorPurpleIwaa);
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnColorBlueIwaa);
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnColorWhiteIwaa);
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnColorGreenIwaa);
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnColorRedIwaa);
             this.tbpDmxControllerIwaa.Controls.Add(this.lblFlashIntervalIwaa);
             this.tbpDmxControllerIwaa.Controls.Add(this.trbFlashIntervalIwaa);
             this.tbpDmxControllerIwaa.Controls.Add(this.lblFlashingIwaa);
@@ -179,6 +196,76 @@
             this.tbpDmxControllerIwaa.TabIndex = 1;
             this.tbpDmxControllerIwaa.Text = "DMX controller";
             this.tbpDmxControllerIwaa.UseVisualStyleBackColor = true;
+            // 
+            // btnColorYellowIwaa
+            // 
+            this.btnColorYellowIwaa.Location = new System.Drawing.Point(347, 186);
+            this.btnColorYellowIwaa.Name = "btnColorYellowIwaa";
+            this.btnColorYellowIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnColorYellowIwaa.TabIndex = 17;
+            this.btnColorYellowIwaa.Text = "Yellow";
+            this.btnColorYellowIwaa.UseVisualStyleBackColor = true;
+            this.btnColorYellowIwaa.Click += new System.EventHandler(this.btnColorYellowIwaa_Click);
+            // 
+            // btnColorOrangeIwaa
+            // 
+            this.btnColorOrangeIwaa.Location = new System.Drawing.Point(347, 157);
+            this.btnColorOrangeIwaa.Name = "btnColorOrangeIwaa";
+            this.btnColorOrangeIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnColorOrangeIwaa.TabIndex = 16;
+            this.btnColorOrangeIwaa.Text = "Orange";
+            this.btnColorOrangeIwaa.UseVisualStyleBackColor = true;
+            this.btnColorOrangeIwaa.Click += new System.EventHandler(this.btnColorOrangeIwaa_Click);
+            // 
+            // btnColorPurpleIwaa
+            // 
+            this.btnColorPurpleIwaa.Location = new System.Drawing.Point(347, 128);
+            this.btnColorPurpleIwaa.Name = "btnColorPurpleIwaa";
+            this.btnColorPurpleIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnColorPurpleIwaa.TabIndex = 15;
+            this.btnColorPurpleIwaa.Text = "Purple";
+            this.btnColorPurpleIwaa.UseVisualStyleBackColor = true;
+            this.btnColorPurpleIwaa.Click += new System.EventHandler(this.btnColorPurpleIwaa_Click);
+            // 
+            // btnColorBlueIwaa
+            // 
+            this.btnColorBlueIwaa.Location = new System.Drawing.Point(347, 70);
+            this.btnColorBlueIwaa.Name = "btnColorBlueIwaa";
+            this.btnColorBlueIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnColorBlueIwaa.TabIndex = 14;
+            this.btnColorBlueIwaa.Text = "Blue";
+            this.btnColorBlueIwaa.UseVisualStyleBackColor = true;
+            this.btnColorBlueIwaa.Click += new System.EventHandler(this.btnColorBlueIwaa_Click);
+            // 
+            // btnColorWhiteIwaa
+            // 
+            this.btnColorWhiteIwaa.Location = new System.Drawing.Point(347, 99);
+            this.btnColorWhiteIwaa.Name = "btnColorWhiteIwaa";
+            this.btnColorWhiteIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnColorWhiteIwaa.TabIndex = 13;
+            this.btnColorWhiteIwaa.Text = "White";
+            this.btnColorWhiteIwaa.UseVisualStyleBackColor = true;
+            this.btnColorWhiteIwaa.Click += new System.EventHandler(this.btnColorWhiteIwaa_Click);
+            // 
+            // btnColorGreenIwaa
+            // 
+            this.btnColorGreenIwaa.Location = new System.Drawing.Point(347, 41);
+            this.btnColorGreenIwaa.Name = "btnColorGreenIwaa";
+            this.btnColorGreenIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnColorGreenIwaa.TabIndex = 12;
+            this.btnColorGreenIwaa.Text = "Green";
+            this.btnColorGreenIwaa.UseVisualStyleBackColor = true;
+            this.btnColorGreenIwaa.Click += new System.EventHandler(this.btnColorGreenIwaa_Click);
+            // 
+            // btnColorRedIwaa
+            // 
+            this.btnColorRedIwaa.Location = new System.Drawing.Point(347, 12);
+            this.btnColorRedIwaa.Name = "btnColorRedIwaa";
+            this.btnColorRedIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnColorRedIwaa.TabIndex = 11;
+            this.btnColorRedIwaa.Text = "Red";
+            this.btnColorRedIwaa.UseVisualStyleBackColor = true;
+            this.btnColorRedIwaa.Click += new System.EventHandler(this.btnColorRedIwaa_Click);
             // 
             // lblFlashIntervalIwaa
             // 
@@ -285,6 +372,8 @@
             // 
             // tbpSavedShowsIwaa
             // 
+            this.tbpSavedShowsIwaa.Controls.Add(this.btnPlayIwaa);
+            this.tbpSavedShowsIwaa.Controls.Add(this.comboBox1);
             this.tbpSavedShowsIwaa.Location = new System.Drawing.Point(4, 25);
             this.tbpSavedShowsIwaa.Name = "tbpSavedShowsIwaa";
             this.tbpSavedShowsIwaa.Padding = new System.Windows.Forms.Padding(3);
@@ -302,6 +391,24 @@
             this.tbpTimelineIwaa.TabIndex = 3;
             this.tbpTimelineIwaa.Text = "Timeline";
             this.tbpTimelineIwaa.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // btnPlayIwaa
+            // 
+            this.btnPlayIwaa.Location = new System.Drawing.Point(6, 102);
+            this.btnPlayIwaa.Name = "btnPlayIwaa";
+            this.btnPlayIwaa.Size = new System.Drawing.Size(75, 23);
+            this.btnPlayIwaa.TabIndex = 1;
+            this.btnPlayIwaa.Text = "PLAY";
+            this.btnPlayIwaa.UseVisualStyleBackColor = true;
+            this.btnPlayIwaa.Click += new System.EventHandler(this.btnPlayIwaa_Click);
             // 
             // Form1
             // 
@@ -321,6 +428,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trbGreenParIwaa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbBlueParIwaa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbRedParIwaa)).EndInit();
+            this.tbpSavedShowsIwaa.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -350,6 +458,15 @@
         private System.Windows.Forms.Label lblFlashingIwaa;
         private System.Windows.Forms.Label lblFlashIntervalIwaa;
         private System.Windows.Forms.TrackBar trbFlashIntervalIwaa;
+        private System.Windows.Forms.Button btnColorPurpleIwaa;
+        private System.Windows.Forms.Button btnColorBlueIwaa;
+        private System.Windows.Forms.Button btnColorWhiteIwaa;
+        private System.Windows.Forms.Button btnColorGreenIwaa;
+        private System.Windows.Forms.Button btnColorRedIwaa;
+        private System.Windows.Forms.Button btnColorYellowIwaa;
+        private System.Windows.Forms.Button btnColorOrangeIwaa;
+        private System.Windows.Forms.Button btnPlayIwaa;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
