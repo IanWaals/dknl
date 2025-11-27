@@ -1,0 +1,11 @@
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\MovingheadsTest.csproj.AssemblyReference.cache
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\MovingheadsTest.Properties.Resources.resources
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\MovingheadsTest.csproj.GenerateResource.cache
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\MovingheadsTest.csproj.CoreCompileInputs.cache
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\HydraBeamControl.Form1.resources
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\bin\Debug\MovingheadsTest.exe.config
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\bin\Debug\MovingheadsTest.exe
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\bin\Debug\MovingheadsTest.pdb
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\MovingheadsTest.exe
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\MovingheadsTest.pdb
+C:\Users\mauri\source\repos\MovingheadsTest\MovingheadsTest\obj\Debug\MovingheadsTest.exe.config
