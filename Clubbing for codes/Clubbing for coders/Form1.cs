@@ -26,7 +26,7 @@ namespace Clubbing_for_coders
         public Form1()
         {
             InitializeComponent();
-            dmxPort = new SerialPort("COM13", 250000, Parity.None, 8, StopBits.Two);
+            dmxPort = new SerialPort("COM8", 250000, Parity.None, 8, StopBits.Two);
         }
 
         private void btnOpenControllerIwaa_Click(object sender, EventArgs e)
@@ -51,11 +51,33 @@ namespace Clubbing_for_coders
             tbcPagesIwaa.SizeMode = TabSizeMode.Fixed;
             trbFlashIntervalIwaa.Enabled = false;
 
+            dmxSliderRedRoli.ValueChanged += v => dmxData[0] = (byte)(v * 21);
+            dmxSliderGreenRoli.ValueChanged += v => dmxData[1] = (byte)(v * 21);
+            dmxSliderBlueRoli.ValueChanged += v => dmxData[2] = (byte)(v * 21);
+
+            // create the toggle switch
+            ToggleSwitch togglePower = new ToggleSwitch();
+            togglePower.Location = btnTogglePowerAllParIwaa.Location;
+
+            // connect to your existing DMX ON/OFF logic
+            togglePower.Toggled += TogglePower_Toggled;
+
+            // add to UI
+            tbpDmxControllerIwaa.Controls.Add(togglePower);
+            togglePower.BringToFront();
+
+            // hide unused button
+            btnTogglePowerAllParIwaa.Visible = false;
+
+            // ensure lights actually START OFF in DMX:
+            dmxData[0] = 0;
+            dmxData[1] = 0;
+            dmxData[2] = 0;
+            lightsTogglePower = false;
+
             try
             {
                 dmxPort.Open();
-
-
 
                 // Start the continuous DMX transmission thread
                 isRunning = true;
@@ -69,7 +91,9 @@ namespace Clubbing_for_coders
             {
                 MessageBox.Show("Error opening DMX port: " + ex.Message);
             }
-
+            dmxSliderRedRoli.Enabled = lightsTogglePower;
+            dmxSliderGreenRoli.Enabled = lightsTogglePower;
+            dmxSliderBlueRoli.Enabled = lightsTogglePower;
         }
 
         private void DMXTransmissionLoop()
@@ -138,90 +162,68 @@ namespace Clubbing_for_coders
             }
         }
 
+        private void TogglePower_Toggled(object sender, EventArgs e)
+        {
+            // Call your existing power toggle logic
+            btnTogglePowerAllParIwaa_Click(sender, e);
+
+            // Make sure sliders reflect current state
+            dmxSliderRedRoli.Enabled = lightsTogglePower;
+            dmxSliderGreenRoli.Enabled = lightsTogglePower;
+            dmxSliderBlueRoli.Enabled = lightsTogglePower;
+        }
+
+
         private void btnTogglePowerAllParIwaa_Click(object sender, EventArgs e)
         {
             if (lightsTogglePower)
             {
-                // Turn off flashing first if it's active
+                // Turn off flashing first if active
                 if (toggleFlashing)
                 {
                     toggleFlashing = false;
                     btnFlashLightsIwaa.Text = "Make the lights flash";
-                    lblFlashingIwaa.Text = "Not flashing";
                     trbFlashIntervalIwaa.Enabled = false;
                 }
 
+                // TURN LIGHTS OFF
                 dmxData[0] = 0;
                 dmxData[1] = 0;
                 dmxData[2] = 0;
 
-                trbRedParIwaa.Enabled = false;
-                trbGreenParIwaa.Enabled = false;
-                trbBlueParIwaa.Enabled = false;
+                // RESET SLIDERS
+                dmxSliderRedRoli.Value = 0;
+                dmxSliderGreenRoli.Value = 0;
+                dmxSliderBlueRoli.Value = 0;
 
-                btnTogglePowerAllParIwaa.Text = "Turn On";
+                // DISABLE SLIDERS WHEN OFF
+                dmxSliderRedRoli.Enabled = false;
+                dmxSliderGreenRoli.Enabled = false;
+                dmxSliderBlueRoli.Enabled = false;
+
                 lightsTogglePower = false;
             }
             else
             {
+                // TURN LIGHTS ON
                 dmxData[0] = (byte)savedDmxData[0];
                 dmxData[1] = (byte)savedDmxData[1];
                 dmxData[2] = (byte)savedDmxData[2];
 
-                trbRedParIwaa.Enabled = true;
-                trbGreenParIwaa.Enabled = true;
-                trbBlueParIwaa.Enabled = true;
+                // RESTORE SLIDER POSITIONS
+                dmxSliderRedRoli.Value = savedDmxData[0] / 21;
+                dmxSliderGreenRoli.Value = savedDmxData[1] / 21;
+                dmxSliderBlueRoli.Value = savedDmxData[2] / 21;
 
-                btnTogglePowerAllParIwaa.Text = "Turn Off";
+                // ENABLE SLIDERS WHEN ON
+                dmxSliderRedRoli.Enabled = true;
+                dmxSliderGreenRoli.Enabled = true;
+                dmxSliderBlueRoli.Enabled = true;
+
                 lightsTogglePower = true;
 
                 SendDMXFrame();
             }
-        }
-
-        private void trbRedParIwaa_Scroll(object sender, EventArgs e)
-        {
-            // Update DMX channel 1 (array index 0)
-            dmxData[0] = (byte)trbRedParIwaa.Value;
-            savedDmxData[0] = (byte)dmxData[0];
-
-            // Update the label to show current value
-            if (lblRedValueIwaa != null)
-            {
-                lblRedValueIwaa.Text = $"Red: {dmxData[0]}";
-            }
-
-            // No need to call SendDMX() here - the background thread handles it
-        }
-
-        private void trbGreenParIwaa_Scroll(object sender, EventArgs e)
-        {
-            // Update DMX channel 1 (array index 0)
-            dmxData[1] = (byte)trbGreenParIwaa.Value;
-            savedDmxData[1] = (byte)dmxData[1];
-
-            // Update the label to show current value
-            if (lblGreenValue != null)
-            {
-                lblGreenValue.Text = $"Green: {dmxData[1]}";
-            }
-
-            // No need to call SendDMX() here - the background thread handles it
-        }
-
-        private void trbBlueParIwaa_Scroll(object sender, EventArgs e)
-        {
-            // Update DMX channel 1 (array index 0)
-            dmxData[2] = (byte)trbBlueParIwaa.Value;
-            savedDmxData[2] = (byte)dmxData[2];
-
-            // Update the label to show current value
-            if (lblBlueValue != null)
-            {
-                lblBlueValue.Text = $"Blue: {dmxData[2]}";
-            }
-
-            // No need to call SendDMX() here - the background thread handles it
         }
 
         private void btnFlashLightsIwaa_Click(object sender, EventArgs e)
@@ -230,7 +232,6 @@ namespace Clubbing_for_coders
             {
                 toggleFlashing = true;
                 btnFlashLightsIwaa.Text = "Stop Flashing";
-                lblFlashingIwaa.Text = "Flashing";
                 trbFlashIntervalIwaa.Enabled = true;
                 LightsFlashing();
             }
@@ -238,7 +239,6 @@ namespace Clubbing_for_coders
             {
                 toggleFlashing = false;
                 btnFlashLightsIwaa.Text = "Make the lights flash";
-                lblFlashingIwaa.Text = "Not flashing";
                 trbFlashIntervalIwaa.Enabled = false;
             }
         }
@@ -246,14 +246,14 @@ namespace Clubbing_for_coders
         private async void LightsFlashing()
         {
             // Store the current RGB values from trackbars
-            byte flashRed = (byte)trbRedParIwaa.Value;
-            byte flashGreen = (byte)trbGreenParIwaa.Value;
-            byte flashBlue = (byte)trbBlueParIwaa.Value;
+            byte flashRed = (byte)(dmxSliderRedRoli.Value * 21);
+            byte flashGreen = (byte)(dmxSliderGreenRoli.Value * 21);
+            byte flashBlue = (byte)(dmxSliderBlueRoli.Value * 21);
 
             // Disable trackbars during flashing
-            trbRedParIwaa.Enabled = false;
-            trbGreenParIwaa.Enabled = false;
-            trbBlueParIwaa.Enabled = false;
+            dmxSliderRedRoli.Enabled = false;
+            dmxSliderGreenRoli.Enabled = false;
+            dmxSliderBlueRoli.Enabled = false;
 
             // Change button text to indicate flashing is active
             btnFlashLightsIwaa.Text = "Flashing... (Click to Stop)";
@@ -278,29 +278,14 @@ namespace Clubbing_for_coders
                 await Task.Delay(trbFlashIntervalIwaa.Value); // Wait (lights off)
             }
 
-            // Only restore original values if lights are supposed to be ON
-            if (lightsTogglePower)
-            {
-                dmxData[0] = flashRed;
-                dmxData[1] = flashGreen;
-                dmxData[2] = flashBlue;
-            }
-            else
-            {
-                // Keep lights off
-                dmxData[0] = 0;
-                dmxData[1] = 0;
-                dmxData[2] = 0;
-            }
-
-            // Re-enable trackbars
-            trbRedParIwaa.Enabled = true;
-            trbGreenParIwaa.Enabled = true;
-            trbBlueParIwaa.Enabled = true;
-
             // Reset button
             btnFlashLightsIwaa.Text = "Make the lights flash";
             btnFlashLightsIwaa.Click += btnFlashLightsIwaa_Click;
+
+            // Enable trackbars during flashing
+            dmxSliderRedRoli.Enabled = true;
+            dmxSliderGreenRoli.Enabled = true;
+            dmxSliderBlueRoli.Enabled = true;
         }
 
         private void trbFlashIntervalIwaa_Scroll(object sender, EventArgs e)
