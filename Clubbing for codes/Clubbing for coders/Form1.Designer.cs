@@ -38,6 +38,7 @@
             this.lblToControllerIwaa = new System.Windows.Forms.Label();
             this.lblTitleIwaa = new System.Windows.Forms.Label();
             this.tbpDmxControllerIwaa = new System.Windows.Forms.TabPage();
+            this.btnBackToHome1 = new System.Windows.Forms.Button();
             this.btnColorYellowIwaa = new System.Windows.Forms.Button();
             this.btnColorOrangeIwaa = new System.Windows.Forms.Button();
             this.btnColorPurpleIwaa = new System.Windows.Forms.Button();
@@ -57,9 +58,56 @@
             this.trbBlueParIwaa = new System.Windows.Forms.TrackBar();
             this.trbRedParIwaa = new System.Windows.Forms.TrackBar();
             this.tbpSavedShowsIwaa = new System.Windows.Forms.TabPage();
+            this.btnBackToHome2 = new System.Windows.Forms.Button();
             this.btnPlayIwaa = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tbpTimelineIwaa = new System.Windows.Forms.TabPage();
+            this.txbDurationFunction19 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction18 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction17 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction10 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction11 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction13 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction14 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction15 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction16 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction22 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction21 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction20 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction8 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction9 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction7 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction6 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction5 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction4 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction3 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction2 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction12 = new System.Windows.Forms.TextBox();
+            this.txbDurationFunction1 = new System.Windows.Forms.TextBox();
+            this.btnBackToHome3 = new System.Windows.Forms.Button();
+            this.btnSaveShowIwaa = new System.Windows.Forms.Button();
+            this.pnlTimelineSlot21 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot10 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot20 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot9 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot19 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot8 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot18 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot7 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot22 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot11 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot17 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot6 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot16 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot5 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot15 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot4 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot14 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot3 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot13 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot2 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot12 = new System.Windows.Forms.Panel();
+            this.pnlTimelineSlot1 = new System.Windows.Forms.Panel();
             this.pnlStartFlashingFunctionIwaa = new System.Windows.Forms.Panel();
             this.pnlTurnOffFunctionIwaa = new System.Windows.Forms.Panel();
             this.pnlTurnOnFunctionIwaa = new System.Windows.Forms.Panel();
@@ -70,29 +118,6 @@
             this.pnlTurnBlueFunctionIwaa = new System.Windows.Forms.Panel();
             this.pnlTurnGreenFunctionIwaa = new System.Windows.Forms.Panel();
             this.pnlTurnRedFunctionIwaa = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot1 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot6 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot5 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot4 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot3 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot2 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot11 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot10 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot9 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot8 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot7 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot21 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot20 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot19 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot18 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot22 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot17 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot16 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot15 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot14 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot13 = new System.Windows.Forms.Panel();
-            this.pnlTimelineSlot12 = new System.Windows.Forms.Panel();
-            this.btnSaveShowIwaa = new System.Windows.Forms.Button();
             this.tbcPagesIwaa.SuspendLayout();
             this.tbpHomepageIwaa.SuspendLayout();
             this.tbpDmxControllerIwaa.SuspendLayout();
@@ -205,6 +230,7 @@
             // 
             // tbpDmxControllerIwaa
             // 
+            this.tbpDmxControllerIwaa.Controls.Add(this.btnBackToHome1);
             this.tbpDmxControllerIwaa.Controls.Add(this.btnColorYellowIwaa);
             this.tbpDmxControllerIwaa.Controls.Add(this.btnColorOrangeIwaa);
             this.tbpDmxControllerIwaa.Controls.Add(this.btnColorPurpleIwaa);
@@ -230,6 +256,16 @@
             this.tbpDmxControllerIwaa.TabIndex = 1;
             this.tbpDmxControllerIwaa.Text = "DMX controller";
             this.tbpDmxControllerIwaa.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToHome1
+            // 
+            this.btnBackToHome1.Location = new System.Drawing.Point(6, 6);
+            this.btnBackToHome1.Name = "btnBackToHome1";
+            this.btnBackToHome1.Size = new System.Drawing.Size(158, 23);
+            this.btnBackToHome1.TabIndex = 19;
+            this.btnBackToHome1.Text = "back to homepage";
+            this.btnBackToHome1.UseVisualStyleBackColor = true;
+            this.btnBackToHome1.Click += new System.EventHandler(this.btnBackToHome1_Click);
             // 
             // btnColorYellowIwaa
             // 
@@ -304,7 +340,7 @@
             // lblFlashIntervalIwaa
             // 
             this.lblFlashIntervalIwaa.AutoSize = true;
-            this.lblFlashIntervalIwaa.Location = new System.Drawing.Point(277, 115);
+            this.lblFlashIntervalIwaa.Location = new System.Drawing.Point(277, 150);
             this.lblFlashIntervalIwaa.Name = "lblFlashIntervalIwaa";
             this.lblFlashIntervalIwaa.Size = new System.Drawing.Size(44, 16);
             this.lblFlashIntervalIwaa.TabIndex = 10;
@@ -312,7 +348,7 @@
             // 
             // trbFlashIntervalIwaa
             // 
-            this.trbFlashIntervalIwaa.Location = new System.Drawing.Point(6, 86);
+            this.trbFlashIntervalIwaa.Location = new System.Drawing.Point(6, 121);
             this.trbFlashIntervalIwaa.Maximum = 800;
             this.trbFlashIntervalIwaa.Minimum = 80;
             this.trbFlashIntervalIwaa.Name = "trbFlashIntervalIwaa";
@@ -324,7 +360,7 @@
             // lblFlashingIwaa
             // 
             this.lblFlashingIwaa.AutoSize = true;
-            this.lblFlashingIwaa.Location = new System.Drawing.Point(277, 64);
+            this.lblFlashingIwaa.Location = new System.Drawing.Point(277, 99);
             this.lblFlashingIwaa.Name = "lblFlashingIwaa";
             this.lblFlashingIwaa.Size = new System.Drawing.Size(44, 16);
             this.lblFlashingIwaa.TabIndex = 8;
@@ -332,7 +368,7 @@
             // 
             // btnFlashLightsIwaa
             // 
-            this.btnFlashLightsIwaa.Location = new System.Drawing.Point(6, 46);
+            this.btnFlashLightsIwaa.Location = new System.Drawing.Point(6, 81);
             this.btnFlashLightsIwaa.Name = "btnFlashLightsIwaa";
             this.btnFlashLightsIwaa.Size = new System.Drawing.Size(245, 34);
             this.btnFlashLightsIwaa.TabIndex = 7;
@@ -369,7 +405,7 @@
             // 
             // btnTogglePowerAllParIwaa
             // 
-            this.btnTogglePowerAllParIwaa.Location = new System.Drawing.Point(6, 6);
+            this.btnTogglePowerAllParIwaa.Location = new System.Drawing.Point(6, 41);
             this.btnTogglePowerAllParIwaa.Name = "btnTogglePowerAllParIwaa";
             this.btnTogglePowerAllParIwaa.Size = new System.Drawing.Size(245, 34);
             this.btnTogglePowerAllParIwaa.TabIndex = 3;
@@ -406,6 +442,7 @@
             // 
             // tbpSavedShowsIwaa
             // 
+            this.tbpSavedShowsIwaa.Controls.Add(this.btnBackToHome2);
             this.tbpSavedShowsIwaa.Controls.Add(this.btnPlayIwaa);
             this.tbpSavedShowsIwaa.Controls.Add(this.comboBox1);
             this.tbpSavedShowsIwaa.Location = new System.Drawing.Point(4, 25);
@@ -415,6 +452,16 @@
             this.tbpSavedShowsIwaa.TabIndex = 2;
             this.tbpSavedShowsIwaa.Text = "Saved Shows";
             this.tbpSavedShowsIwaa.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToHome2
+            // 
+            this.btnBackToHome2.Location = new System.Drawing.Point(6, 6);
+            this.btnBackToHome2.Name = "btnBackToHome2";
+            this.btnBackToHome2.Size = new System.Drawing.Size(158, 23);
+            this.btnBackToHome2.TabIndex = 19;
+            this.btnBackToHome2.Text = "back to homepage";
+            this.btnBackToHome2.UseVisualStyleBackColor = true;
+            this.btnBackToHome2.Click += new System.EventHandler(this.btnBackToHome2_Click);
             // 
             // btnPlayIwaa
             // 
@@ -436,6 +483,29 @@
             // 
             // tbpTimelineIwaa
             // 
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction19);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction18);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction17);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction10);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction11);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction13);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction14);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction15);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction16);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction22);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction21);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction20);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction8);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction9);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction7);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction6);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction5);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction4);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction3);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction2);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction12);
+            this.tbpTimelineIwaa.Controls.Add(this.txbDurationFunction1);
+            this.tbpTimelineIwaa.Controls.Add(this.btnBackToHome3);
             this.tbpTimelineIwaa.Controls.Add(this.btnSaveShowIwaa);
             this.tbpTimelineIwaa.Controls.Add(this.pnlTimelineSlot21);
             this.tbpTimelineIwaa.Controls.Add(this.pnlTimelineSlot10);
@@ -477,238 +547,402 @@
             this.tbpTimelineIwaa.Text = "Timeline";
             this.tbpTimelineIwaa.UseVisualStyleBackColor = true;
             // 
+            // txbDurationFunction19
+            // 
+            this.txbDurationFunction19.Location = new System.Drawing.Point(483, 207);
+            this.txbDurationFunction19.Name = "txbDurationFunction19";
+            this.txbDurationFunction19.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction19.TabIndex = 40;
+            // 
+            // txbDurationFunction18
+            // 
+            this.txbDurationFunction18.Location = new System.Drawing.Point(414, 207);
+            this.txbDurationFunction18.Name = "txbDurationFunction18";
+            this.txbDurationFunction18.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction18.TabIndex = 39;
+            // 
+            // txbDurationFunction17
+            // 
+            this.txbDurationFunction17.Location = new System.Drawing.Point(348, 207);
+            this.txbDurationFunction17.Name = "txbDurationFunction17";
+            this.txbDurationFunction17.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction17.TabIndex = 38;
+            // 
+            // txbDurationFunction10
+            // 
+            this.txbDurationFunction10.Location = new System.Drawing.Point(615, 101);
+            this.txbDurationFunction10.Name = "txbDurationFunction10";
+            this.txbDurationFunction10.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction10.TabIndex = 37;
+            // 
+            // txbDurationFunction11
+            // 
+            this.txbDurationFunction11.Location = new System.Drawing.Point(681, 101);
+            this.txbDurationFunction11.Name = "txbDurationFunction11";
+            this.txbDurationFunction11.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction11.TabIndex = 36;
+            // 
+            // txbDurationFunction13
+            // 
+            this.txbDurationFunction13.Location = new System.Drawing.Point(84, 207);
+            this.txbDurationFunction13.Name = "txbDurationFunction13";
+            this.txbDurationFunction13.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction13.TabIndex = 35;
+            // 
+            // txbDurationFunction14
+            // 
+            this.txbDurationFunction14.Location = new System.Drawing.Point(150, 207);
+            this.txbDurationFunction14.Name = "txbDurationFunction14";
+            this.txbDurationFunction14.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction14.TabIndex = 34;
+            // 
+            // txbDurationFunction15
+            // 
+            this.txbDurationFunction15.Location = new System.Drawing.Point(216, 207);
+            this.txbDurationFunction15.Name = "txbDurationFunction15";
+            this.txbDurationFunction15.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction15.TabIndex = 33;
+            // 
+            // txbDurationFunction16
+            // 
+            this.txbDurationFunction16.Location = new System.Drawing.Point(282, 207);
+            this.txbDurationFunction16.Name = "txbDurationFunction16";
+            this.txbDurationFunction16.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction16.TabIndex = 32;
+            // 
+            // txbDurationFunction22
+            // 
+            this.txbDurationFunction22.Location = new System.Drawing.Point(681, 207);
+            this.txbDurationFunction22.Name = "txbDurationFunction22";
+            this.txbDurationFunction22.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction22.TabIndex = 31;
+            // 
+            // txbDurationFunction21
+            // 
+            this.txbDurationFunction21.Location = new System.Drawing.Point(615, 207);
+            this.txbDurationFunction21.Name = "txbDurationFunction21";
+            this.txbDurationFunction21.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction21.TabIndex = 30;
+            // 
+            // txbDurationFunction20
+            // 
+            this.txbDurationFunction20.Location = new System.Drawing.Point(549, 207);
+            this.txbDurationFunction20.Name = "txbDurationFunction20";
+            this.txbDurationFunction20.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction20.TabIndex = 29;
+            // 
+            // txbDurationFunction8
+            // 
+            this.txbDurationFunction8.Location = new System.Drawing.Point(483, 101);
+            this.txbDurationFunction8.Name = "txbDurationFunction8";
+            this.txbDurationFunction8.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction8.TabIndex = 28;
+            // 
+            // txbDurationFunction9
+            // 
+            this.txbDurationFunction9.Location = new System.Drawing.Point(549, 101);
+            this.txbDurationFunction9.Name = "txbDurationFunction9";
+            this.txbDurationFunction9.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction9.TabIndex = 27;
+            // 
+            // txbDurationFunction7
+            // 
+            this.txbDurationFunction7.Location = new System.Drawing.Point(414, 101);
+            this.txbDurationFunction7.Name = "txbDurationFunction7";
+            this.txbDurationFunction7.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction7.TabIndex = 26;
+            // 
+            // txbDurationFunction6
+            // 
+            this.txbDurationFunction6.Location = new System.Drawing.Point(348, 101);
+            this.txbDurationFunction6.Name = "txbDurationFunction6";
+            this.txbDurationFunction6.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction6.TabIndex = 25;
+            // 
+            // txbDurationFunction5
+            // 
+            this.txbDurationFunction5.Location = new System.Drawing.Point(282, 101);
+            this.txbDurationFunction5.Name = "txbDurationFunction5";
+            this.txbDurationFunction5.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction5.TabIndex = 24;
+            // 
+            // txbDurationFunction4
+            // 
+            this.txbDurationFunction4.Location = new System.Drawing.Point(216, 101);
+            this.txbDurationFunction4.Name = "txbDurationFunction4";
+            this.txbDurationFunction4.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction4.TabIndex = 23;
+            // 
+            // txbDurationFunction3
+            // 
+            this.txbDurationFunction3.Location = new System.Drawing.Point(150, 101);
+            this.txbDurationFunction3.Name = "txbDurationFunction3";
+            this.txbDurationFunction3.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction3.TabIndex = 22;
+            // 
+            // txbDurationFunction2
+            // 
+            this.txbDurationFunction2.Location = new System.Drawing.Point(84, 101);
+            this.txbDurationFunction2.Name = "txbDurationFunction2";
+            this.txbDurationFunction2.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction2.TabIndex = 21;
+            // 
+            // txbDurationFunction12
+            // 
+            this.txbDurationFunction12.Location = new System.Drawing.Point(18, 207);
+            this.txbDurationFunction12.Name = "txbDurationFunction12";
+            this.txbDurationFunction12.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction12.TabIndex = 20;
+            // 
+            // txbDurationFunction1
+            // 
+            this.txbDurationFunction1.Location = new System.Drawing.Point(18, 101);
+            this.txbDurationFunction1.Name = "txbDurationFunction1";
+            this.txbDurationFunction1.Size = new System.Drawing.Size(60, 22);
+            this.txbDurationFunction1.TabIndex = 19;
+            // 
+            // btnBackToHome3
+            // 
+            this.btnBackToHome3.Location = new System.Drawing.Point(6, 6);
+            this.btnBackToHome3.Name = "btnBackToHome3";
+            this.btnBackToHome3.Size = new System.Drawing.Size(158, 23);
+            this.btnBackToHome3.TabIndex = 18;
+            this.btnBackToHome3.Text = "back to homepage";
+            this.btnBackToHome3.UseVisualStyleBackColor = true;
+            this.btnBackToHome3.Click += new System.EventHandler(this.btnBackToHome3_Click);
+            // 
+            // btnSaveShowIwaa
+            // 
+            this.btnSaveShowIwaa.Location = new System.Drawing.Point(13, 266);
+            this.btnSaveShowIwaa.Name = "btnSaveShowIwaa";
+            this.btnSaveShowIwaa.Size = new System.Drawing.Size(223, 23);
+            this.btnSaveShowIwaa.TabIndex = 17;
+            this.btnSaveShowIwaa.Text = "Finish and save";
+            this.btnSaveShowIwaa.UseVisualStyleBackColor = true;
+            // 
+            // pnlTimelineSlot21
+            // 
+            this.pnlTimelineSlot21.Location = new System.Drawing.Point(615, 141);
+            this.pnlTimelineSlot21.Name = "pnlTimelineSlot21";
+            this.pnlTimelineSlot21.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot21.TabIndex = 7;
+            // 
+            // pnlTimelineSlot10
+            // 
+            this.pnlTimelineSlot10.Location = new System.Drawing.Point(615, 35);
+            this.pnlTimelineSlot10.Name = "pnlTimelineSlot10";
+            this.pnlTimelineSlot10.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot10.TabIndex = 4;
+            // 
+            // pnlTimelineSlot20
+            // 
+            this.pnlTimelineSlot20.Location = new System.Drawing.Point(549, 141);
+            this.pnlTimelineSlot20.Name = "pnlTimelineSlot20";
+            this.pnlTimelineSlot20.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot20.TabIndex = 8;
+            // 
+            // pnlTimelineSlot9
+            // 
+            this.pnlTimelineSlot9.Location = new System.Drawing.Point(549, 35);
+            this.pnlTimelineSlot9.Name = "pnlTimelineSlot9";
+            this.pnlTimelineSlot9.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot9.TabIndex = 4;
+            // 
+            // pnlTimelineSlot19
+            // 
+            this.pnlTimelineSlot19.Location = new System.Drawing.Point(483, 141);
+            this.pnlTimelineSlot19.Name = "pnlTimelineSlot19";
+            this.pnlTimelineSlot19.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot19.TabIndex = 9;
+            // 
+            // pnlTimelineSlot8
+            // 
+            this.pnlTimelineSlot8.Location = new System.Drawing.Point(483, 35);
+            this.pnlTimelineSlot8.Name = "pnlTimelineSlot8";
+            this.pnlTimelineSlot8.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot8.TabIndex = 4;
+            // 
+            // pnlTimelineSlot18
+            // 
+            this.pnlTimelineSlot18.Location = new System.Drawing.Point(414, 141);
+            this.pnlTimelineSlot18.Name = "pnlTimelineSlot18";
+            this.pnlTimelineSlot18.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot18.TabIndex = 10;
+            // 
+            // pnlTimelineSlot7
+            // 
+            this.pnlTimelineSlot7.Location = new System.Drawing.Point(414, 35);
+            this.pnlTimelineSlot7.Name = "pnlTimelineSlot7";
+            this.pnlTimelineSlot7.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot7.TabIndex = 4;
+            // 
+            // pnlTimelineSlot22
+            // 
+            this.pnlTimelineSlot22.Location = new System.Drawing.Point(681, 141);
+            this.pnlTimelineSlot22.Name = "pnlTimelineSlot22";
+            this.pnlTimelineSlot22.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot22.TabIndex = 16;
+            // 
+            // pnlTimelineSlot11
+            // 
+            this.pnlTimelineSlot11.Location = new System.Drawing.Point(681, 35);
+            this.pnlTimelineSlot11.Name = "pnlTimelineSlot11";
+            this.pnlTimelineSlot11.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot11.TabIndex = 5;
+            // 
+            // pnlTimelineSlot17
+            // 
+            this.pnlTimelineSlot17.Location = new System.Drawing.Point(348, 141);
+            this.pnlTimelineSlot17.Name = "pnlTimelineSlot17";
+            this.pnlTimelineSlot17.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot17.TabIndex = 11;
+            // 
+            // pnlTimelineSlot6
+            // 
+            this.pnlTimelineSlot6.Location = new System.Drawing.Point(348, 35);
+            this.pnlTimelineSlot6.Name = "pnlTimelineSlot6";
+            this.pnlTimelineSlot6.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot6.TabIndex = 4;
+            // 
+            // pnlTimelineSlot16
+            // 
+            this.pnlTimelineSlot16.Location = new System.Drawing.Point(282, 141);
+            this.pnlTimelineSlot16.Name = "pnlTimelineSlot16";
+            this.pnlTimelineSlot16.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot16.TabIndex = 12;
+            // 
+            // pnlTimelineSlot5
+            // 
+            this.pnlTimelineSlot5.Location = new System.Drawing.Point(282, 35);
+            this.pnlTimelineSlot5.Name = "pnlTimelineSlot5";
+            this.pnlTimelineSlot5.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot5.TabIndex = 4;
+            // 
+            // pnlTimelineSlot15
+            // 
+            this.pnlTimelineSlot15.Location = new System.Drawing.Point(216, 141);
+            this.pnlTimelineSlot15.Name = "pnlTimelineSlot15";
+            this.pnlTimelineSlot15.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot15.TabIndex = 13;
+            // 
+            // pnlTimelineSlot4
+            // 
+            this.pnlTimelineSlot4.Location = new System.Drawing.Point(216, 35);
+            this.pnlTimelineSlot4.Name = "pnlTimelineSlot4";
+            this.pnlTimelineSlot4.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot4.TabIndex = 4;
+            // 
+            // pnlTimelineSlot14
+            // 
+            this.pnlTimelineSlot14.Location = new System.Drawing.Point(150, 141);
+            this.pnlTimelineSlot14.Name = "pnlTimelineSlot14";
+            this.pnlTimelineSlot14.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot14.TabIndex = 14;
+            // 
+            // pnlTimelineSlot3
+            // 
+            this.pnlTimelineSlot3.Location = new System.Drawing.Point(150, 35);
+            this.pnlTimelineSlot3.Name = "pnlTimelineSlot3";
+            this.pnlTimelineSlot3.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot3.TabIndex = 4;
+            // 
+            // pnlTimelineSlot13
+            // 
+            this.pnlTimelineSlot13.Location = new System.Drawing.Point(84, 141);
+            this.pnlTimelineSlot13.Name = "pnlTimelineSlot13";
+            this.pnlTimelineSlot13.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot13.TabIndex = 15;
+            // 
+            // pnlTimelineSlot2
+            // 
+            this.pnlTimelineSlot2.Location = new System.Drawing.Point(84, 35);
+            this.pnlTimelineSlot2.Name = "pnlTimelineSlot2";
+            this.pnlTimelineSlot2.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot2.TabIndex = 4;
+            // 
+            // pnlTimelineSlot12
+            // 
+            this.pnlTimelineSlot12.Location = new System.Drawing.Point(18, 141);
+            this.pnlTimelineSlot12.Name = "pnlTimelineSlot12";
+            this.pnlTimelineSlot12.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot12.TabIndex = 6;
+            // 
+            // pnlTimelineSlot1
+            // 
+            this.pnlTimelineSlot1.Location = new System.Drawing.Point(18, 35);
+            this.pnlTimelineSlot1.Name = "pnlTimelineSlot1";
+            this.pnlTimelineSlot1.Size = new System.Drawing.Size(60, 60);
+            this.pnlTimelineSlot1.TabIndex = 3;
+            // 
             // pnlStartFlashingFunctionIwaa
             // 
-            this.pnlStartFlashingFunctionIwaa.Location = new System.Drawing.Point(667, 212);
+            this.pnlStartFlashingFunctionIwaa.Location = new System.Drawing.Point(668, 295);
             this.pnlStartFlashingFunctionIwaa.Name = "pnlStartFlashingFunctionIwaa";
             this.pnlStartFlashingFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlStartFlashingFunctionIwaa.TabIndex = 2;
             // 
             // pnlTurnOffFunctionIwaa
             // 
-            this.pnlTurnOffFunctionIwaa.Location = new System.Drawing.Point(596, 212);
+            this.pnlTurnOffFunctionIwaa.Location = new System.Drawing.Point(597, 295);
             this.pnlTurnOffFunctionIwaa.Name = "pnlTurnOffFunctionIwaa";
             this.pnlTurnOffFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnOffFunctionIwaa.TabIndex = 2;
             // 
             // pnlTurnOnFunctionIwaa
             // 
-            this.pnlTurnOnFunctionIwaa.Location = new System.Drawing.Point(525, 212);
+            this.pnlTurnOnFunctionIwaa.Location = new System.Drawing.Point(526, 295);
             this.pnlTurnOnFunctionIwaa.Name = "pnlTurnOnFunctionIwaa";
             this.pnlTurnOnFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnOnFunctionIwaa.TabIndex = 2;
             // 
             // pnlTurnYellowFunctionIwaa
             // 
-            this.pnlTurnYellowFunctionIwaa.Location = new System.Drawing.Point(454, 212);
+            this.pnlTurnYellowFunctionIwaa.Location = new System.Drawing.Point(455, 295);
             this.pnlTurnYellowFunctionIwaa.Name = "pnlTurnYellowFunctionIwaa";
             this.pnlTurnYellowFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnYellowFunctionIwaa.TabIndex = 2;
             // 
             // pnlTurnOrangeFunctionIwaa
             // 
-            this.pnlTurnOrangeFunctionIwaa.Location = new System.Drawing.Point(383, 212);
+            this.pnlTurnOrangeFunctionIwaa.Location = new System.Drawing.Point(384, 295);
             this.pnlTurnOrangeFunctionIwaa.Name = "pnlTurnOrangeFunctionIwaa";
             this.pnlTurnOrangeFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnOrangeFunctionIwaa.TabIndex = 1;
             // 
             // pnlTurnPurpleFunctionIwaa
             // 
-            this.pnlTurnPurpleFunctionIwaa.Location = new System.Drawing.Point(312, 212);
+            this.pnlTurnPurpleFunctionIwaa.Location = new System.Drawing.Point(313, 295);
             this.pnlTurnPurpleFunctionIwaa.Name = "pnlTurnPurpleFunctionIwaa";
             this.pnlTurnPurpleFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnPurpleFunctionIwaa.TabIndex = 1;
             // 
             // pnlTurnWhiteFunctionIwaa
             // 
-            this.pnlTurnWhiteFunctionIwaa.Location = new System.Drawing.Point(241, 212);
+            this.pnlTurnWhiteFunctionIwaa.Location = new System.Drawing.Point(242, 295);
             this.pnlTurnWhiteFunctionIwaa.Name = "pnlTurnWhiteFunctionIwaa";
             this.pnlTurnWhiteFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnWhiteFunctionIwaa.TabIndex = 1;
             // 
             // pnlTurnBlueFunctionIwaa
             // 
-            this.pnlTurnBlueFunctionIwaa.Location = new System.Drawing.Point(170, 212);
+            this.pnlTurnBlueFunctionIwaa.Location = new System.Drawing.Point(171, 295);
             this.pnlTurnBlueFunctionIwaa.Name = "pnlTurnBlueFunctionIwaa";
             this.pnlTurnBlueFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnBlueFunctionIwaa.TabIndex = 1;
             // 
             // pnlTurnGreenFunctionIwaa
             // 
-            this.pnlTurnGreenFunctionIwaa.Location = new System.Drawing.Point(99, 212);
+            this.pnlTurnGreenFunctionIwaa.Location = new System.Drawing.Point(100, 295);
             this.pnlTurnGreenFunctionIwaa.Name = "pnlTurnGreenFunctionIwaa";
             this.pnlTurnGreenFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnGreenFunctionIwaa.TabIndex = 1;
             // 
             // pnlTurnRedFunctionIwaa
             // 
-            this.pnlTurnRedFunctionIwaa.Location = new System.Drawing.Point(28, 212);
+            this.pnlTurnRedFunctionIwaa.Location = new System.Drawing.Point(29, 295);
             this.pnlTurnRedFunctionIwaa.Name = "pnlTurnRedFunctionIwaa";
             this.pnlTurnRedFunctionIwaa.Size = new System.Drawing.Size(65, 65);
             this.pnlTurnRedFunctionIwaa.TabIndex = 0;
-            // 
-            // pnlTimelineSlot1
-            // 
-            this.pnlTimelineSlot1.Location = new System.Drawing.Point(17, 6);
-            this.pnlTimelineSlot1.Name = "pnlTimelineSlot1";
-            this.pnlTimelineSlot1.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot1.TabIndex = 3;
-            // 
-            // pnlTimelineSlot6
-            // 
-            this.pnlTimelineSlot6.Location = new System.Drawing.Point(347, 6);
-            this.pnlTimelineSlot6.Name = "pnlTimelineSlot6";
-            this.pnlTimelineSlot6.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot6.TabIndex = 4;
-            // 
-            // pnlTimelineSlot5
-            // 
-            this.pnlTimelineSlot5.Location = new System.Drawing.Point(281, 6);
-            this.pnlTimelineSlot5.Name = "pnlTimelineSlot5";
-            this.pnlTimelineSlot5.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot5.TabIndex = 4;
-            // 
-            // pnlTimelineSlot4
-            // 
-            this.pnlTimelineSlot4.Location = new System.Drawing.Point(215, 6);
-            this.pnlTimelineSlot4.Name = "pnlTimelineSlot4";
-            this.pnlTimelineSlot4.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot4.TabIndex = 4;
-            // 
-            // pnlTimelineSlot3
-            // 
-            this.pnlTimelineSlot3.Location = new System.Drawing.Point(149, 6);
-            this.pnlTimelineSlot3.Name = "pnlTimelineSlot3";
-            this.pnlTimelineSlot3.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot3.TabIndex = 4;
-            // 
-            // pnlTimelineSlot2
-            // 
-            this.pnlTimelineSlot2.Location = new System.Drawing.Point(83, 6);
-            this.pnlTimelineSlot2.Name = "pnlTimelineSlot2";
-            this.pnlTimelineSlot2.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot2.TabIndex = 4;
-            // 
-            // pnlTimelineSlot11
-            // 
-            this.pnlTimelineSlot11.Location = new System.Drawing.Point(680, 6);
-            this.pnlTimelineSlot11.Name = "pnlTimelineSlot11";
-            this.pnlTimelineSlot11.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot11.TabIndex = 5;
-            // 
-            // pnlTimelineSlot10
-            // 
-            this.pnlTimelineSlot10.Location = new System.Drawing.Point(614, 6);
-            this.pnlTimelineSlot10.Name = "pnlTimelineSlot10";
-            this.pnlTimelineSlot10.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot10.TabIndex = 4;
-            // 
-            // pnlTimelineSlot9
-            // 
-            this.pnlTimelineSlot9.Location = new System.Drawing.Point(548, 6);
-            this.pnlTimelineSlot9.Name = "pnlTimelineSlot9";
-            this.pnlTimelineSlot9.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot9.TabIndex = 4;
-            // 
-            // pnlTimelineSlot8
-            // 
-            this.pnlTimelineSlot8.Location = new System.Drawing.Point(482, 6);
-            this.pnlTimelineSlot8.Name = "pnlTimelineSlot8";
-            this.pnlTimelineSlot8.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot8.TabIndex = 4;
-            // 
-            // pnlTimelineSlot7
-            // 
-            this.pnlTimelineSlot7.Location = new System.Drawing.Point(413, 6);
-            this.pnlTimelineSlot7.Name = "pnlTimelineSlot7";
-            this.pnlTimelineSlot7.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot7.TabIndex = 4;
-            // 
-            // pnlTimelineSlot21
-            // 
-            this.pnlTimelineSlot21.Location = new System.Drawing.Point(614, 83);
-            this.pnlTimelineSlot21.Name = "pnlTimelineSlot21";
-            this.pnlTimelineSlot21.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot21.TabIndex = 7;
-            // 
-            // pnlTimelineSlot20
-            // 
-            this.pnlTimelineSlot20.Location = new System.Drawing.Point(548, 83);
-            this.pnlTimelineSlot20.Name = "pnlTimelineSlot20";
-            this.pnlTimelineSlot20.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot20.TabIndex = 8;
-            // 
-            // pnlTimelineSlot19
-            // 
-            this.pnlTimelineSlot19.Location = new System.Drawing.Point(482, 83);
-            this.pnlTimelineSlot19.Name = "pnlTimelineSlot19";
-            this.pnlTimelineSlot19.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot19.TabIndex = 9;
-            // 
-            // pnlTimelineSlot18
-            // 
-            this.pnlTimelineSlot18.Location = new System.Drawing.Point(413, 83);
-            this.pnlTimelineSlot18.Name = "pnlTimelineSlot18";
-            this.pnlTimelineSlot18.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot18.TabIndex = 10;
-            // 
-            // pnlTimelineSlot22
-            // 
-            this.pnlTimelineSlot22.Location = new System.Drawing.Point(680, 83);
-            this.pnlTimelineSlot22.Name = "pnlTimelineSlot22";
-            this.pnlTimelineSlot22.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot22.TabIndex = 16;
-            // 
-            // pnlTimelineSlot17
-            // 
-            this.pnlTimelineSlot17.Location = new System.Drawing.Point(347, 83);
-            this.pnlTimelineSlot17.Name = "pnlTimelineSlot17";
-            this.pnlTimelineSlot17.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot17.TabIndex = 11;
-            // 
-            // pnlTimelineSlot16
-            // 
-            this.pnlTimelineSlot16.Location = new System.Drawing.Point(281, 83);
-            this.pnlTimelineSlot16.Name = "pnlTimelineSlot16";
-            this.pnlTimelineSlot16.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot16.TabIndex = 12;
-            // 
-            // pnlTimelineSlot15
-            // 
-            this.pnlTimelineSlot15.Location = new System.Drawing.Point(215, 83);
-            this.pnlTimelineSlot15.Name = "pnlTimelineSlot15";
-            this.pnlTimelineSlot15.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot15.TabIndex = 13;
-            // 
-            // pnlTimelineSlot14
-            // 
-            this.pnlTimelineSlot14.Location = new System.Drawing.Point(149, 83);
-            this.pnlTimelineSlot14.Name = "pnlTimelineSlot14";
-            this.pnlTimelineSlot14.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot14.TabIndex = 14;
-            // 
-            // pnlTimelineSlot13
-            // 
-            this.pnlTimelineSlot13.Location = new System.Drawing.Point(83, 83);
-            this.pnlTimelineSlot13.Name = "pnlTimelineSlot13";
-            this.pnlTimelineSlot13.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot13.TabIndex = 15;
-            // 
-            // pnlTimelineSlot12
-            // 
-            this.pnlTimelineSlot12.Location = new System.Drawing.Point(17, 83);
-            this.pnlTimelineSlot12.Name = "pnlTimelineSlot12";
-            this.pnlTimelineSlot12.Size = new System.Drawing.Size(60, 60);
-            this.pnlTimelineSlot12.TabIndex = 6;
-            // 
-            // btnSaveShowIwaa
-            // 
-            this.btnSaveShowIwaa.Location = new System.Drawing.Point(17, 163);
-            this.btnSaveShowIwaa.Name = "btnSaveShowIwaa";
-            this.btnSaveShowIwaa.Size = new System.Drawing.Size(223, 23);
-            this.btnSaveShowIwaa.TabIndex = 17;
-            this.btnSaveShowIwaa.Text = "Finish and save";
-            this.btnSaveShowIwaa.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -730,6 +964,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trbRedParIwaa)).EndInit();
             this.tbpSavedShowsIwaa.ResumeLayout(false);
             this.tbpTimelineIwaa.ResumeLayout(false);
+            this.tbpTimelineIwaa.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -801,5 +1036,30 @@
         private System.Windows.Forms.Panel pnlTimelineSlot12;
         private System.Windows.Forms.Panel pnlTimelineSlot1;
         private System.Windows.Forms.Button btnSaveShowIwaa;
+        private System.Windows.Forms.Button btnBackToHome3;
+        private System.Windows.Forms.Button btnBackToHome1;
+        private System.Windows.Forms.Button btnBackToHome2;
+        private System.Windows.Forms.TextBox txbDurationFunction19;
+        private System.Windows.Forms.TextBox txbDurationFunction18;
+        private System.Windows.Forms.TextBox txbDurationFunction17;
+        private System.Windows.Forms.TextBox txbDurationFunction10;
+        private System.Windows.Forms.TextBox txbDurationFunction11;
+        private System.Windows.Forms.TextBox txbDurationFunction13;
+        private System.Windows.Forms.TextBox txbDurationFunction14;
+        private System.Windows.Forms.TextBox txbDurationFunction15;
+        private System.Windows.Forms.TextBox txbDurationFunction16;
+        private System.Windows.Forms.TextBox txbDurationFunction22;
+        private System.Windows.Forms.TextBox txbDurationFunction21;
+        private System.Windows.Forms.TextBox txbDurationFunction20;
+        private System.Windows.Forms.TextBox txbDurationFunction8;
+        private System.Windows.Forms.TextBox txbDurationFunction9;
+        private System.Windows.Forms.TextBox txbDurationFunction7;
+        private System.Windows.Forms.TextBox txbDurationFunction6;
+        private System.Windows.Forms.TextBox txbDurationFunction5;
+        private System.Windows.Forms.TextBox txbDurationFunction4;
+        private System.Windows.Forms.TextBox txbDurationFunction3;
+        private System.Windows.Forms.TextBox txbDurationFunction2;
+        private System.Windows.Forms.TextBox txbDurationFunction12;
+        private System.Windows.Forms.TextBox txbDurationFunction1;
     }
 }

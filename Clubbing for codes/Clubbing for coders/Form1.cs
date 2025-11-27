@@ -942,18 +942,58 @@ namespace Clubbing_for_coders
 
             try
             {
-                foreach (string functionName in functions)
+                foreach (string functionWithDuration in functions)
                 {
                     if (playShowCancellationToken.Token.IsCancellationRequested)
                         break;
 
-                    // Execute the function
-                    await ExecuteFunction(functionName.Trim());
+                    // Parse function name and duration
+                    // Example: "turnRed5" -> functionName: "turnRed", duration: 5
+                    string functionName = "";
+                    int duration = 2; // Default duration in seconds
 
-                    // Wait between functions (adjust delay as needed)
-                    if (!functionName.Trim().Equals("startFlashing", StringComparison.OrdinalIgnoreCase))
+                    // Extract the function name and duration
+                    string trimmedFunction = functionWithDuration.Trim();
+                    int lastDigitIndex = trimmedFunction.Length - 1;
+
+                    // Find where the digits start from the end
+                    while (lastDigitIndex >= 0 && char.IsDigit(trimmedFunction[lastDigitIndex]))
                     {
-                        await Task.Delay(2000, playShowCancellationToken.Token); // 2 second delay between functions
+                        lastDigitIndex--;
+                    }
+
+                    if (lastDigitIndex < trimmedFunction.Length - 1)
+                    {
+                        // We found digits at the end
+                        functionName = trimmedFunction.Substring(0, lastDigitIndex + 1);
+                        string durationString = trimmedFunction.Substring(lastDigitIndex + 1);
+
+                        if (int.TryParse(durationString, out int parsedDuration))
+                        {
+                            duration = parsedDuration;
+                        }
+                    }
+                    else
+                    {
+                        // No digits found, use the whole string as function name
+                        functionName = trimmedFunction;
+                    }
+
+                    // Execute the function
+                    await ExecuteFunction(functionName);
+
+                    // Wait for the specified duration (convert seconds to milliseconds)
+                    if (!functionName.Equals("startFlashing", StringComparison.OrdinalIgnoreCase))
+                    {
+                        await Task.Delay(duration * 1000, playShowCancellationToken.Token);
+                    }
+                    else
+                    {
+                        // For flashing, use the duration specified
+                        await Task.Delay(duration * 1000, playShowCancellationToken.Token);
+                        stopFlashing();
+                        // Add extra delay to ensure cleanup is complete
+                        await Task.Delay(500, playShowCancellationToken.Token);
                     }
                 }
             }
@@ -1000,16 +1040,14 @@ namespace Clubbing_for_coders
                     break;
                 case "startflashing":
                     startFlashing();
-                    // Wait for flashing to complete
-                    await Task.Delay(5000, playShowCancellationToken.Token);
-                    stopFlashing();
-                    // Add extra delay to ensure cleanup is complete
-                    await Task.Delay(500, playShowCancellationToken.Token);
                     break;
                 default:
                     MessageBox.Show($"Unknown function: {functionName}");
                     break;
             }
+
+            // Small delay to ensure command is processed
+            await Task.Delay(50);
         }
 
         private void StopShow()
@@ -1023,6 +1061,21 @@ namespace Clubbing_for_coders
             {
                 stopFlashing();
             }
+        }
+
+        private void btnBackToHome1_Click(object sender, EventArgs e)
+        {
+            tbcPagesIwaa.SelectedIndex = 0;
+        }
+
+        private void btnBackToHome2_Click(object sender, EventArgs e)
+        {
+            tbcPagesIwaa.SelectedIndex = 0;
+        }
+
+        private void btnBackToHome3_Click(object sender, EventArgs e)
+        {
+            tbcPagesIwaa.SelectedIndex = 0;
         }
     }
 }
