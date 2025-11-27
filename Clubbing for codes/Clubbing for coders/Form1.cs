@@ -30,6 +30,333 @@ namespace Clubbing_for_coders
 
         string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=FunDatabasename;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
+        private Dictionary<Panel, string> timelineSlots = new Dictionary<Panel, string>();
+
+        private void InitializeTimeline()
+        {
+            // Initialize function panels
+            SetupFunctionPanel(pnlTurnRedFunctionIwaa, "turnRed", Color.Red);
+            SetupFunctionPanel(pnlTurnGreenFunctionIwaa, "turnGreen", Color.Green);
+            SetupFunctionPanel(pnlTurnBlueFunctionIwaa, "turnBlue", Color.Blue);
+            SetupFunctionPanel(pnlTurnWhiteFunctionIwaa, "turnWhite", Color.White);
+            SetupFunctionPanel(pnlTurnPurpleFunctionIwaa, "turnPurple", Color.Purple);
+            SetupFunctionPanel(pnlTurnOrangeFunctionIwaa, "turnOrange", Color.Orange);
+            SetupFunctionPanel(pnlTurnYellowFunctionIwaa, "turnYellow", Color.Yellow);
+            SetupFunctionPanel(pnlTurnOnFunctionIwaa, "turnOn", Color.LightGreen);
+            SetupFunctionPanel(pnlTurnOffFunctionIwaa, "turnOff", Color.Gray);
+            SetupFunctionPanel(pnlStartFlashingFunctionIwaa, "startFlashing", Color.Pink);
+
+            // Initialize all timeline slots
+            InitializeTimelineSlot(pnlTimelineSlot1);
+            InitializeTimelineSlot(pnlTimelineSlot2);
+            InitializeTimelineSlot(pnlTimelineSlot3);
+            InitializeTimelineSlot(pnlTimelineSlot4);
+            InitializeTimelineSlot(pnlTimelineSlot5);
+            InitializeTimelineSlot(pnlTimelineSlot6);
+            InitializeTimelineSlot(pnlTimelineSlot7);
+            InitializeTimelineSlot(pnlTimelineSlot8);
+            InitializeTimelineSlot(pnlTimelineSlot9);
+            InitializeTimelineSlot(pnlTimelineSlot10);
+            InitializeTimelineSlot(pnlTimelineSlot11);
+            InitializeTimelineSlot(pnlTimelineSlot12);
+            InitializeTimelineSlot(pnlTimelineSlot13);
+            InitializeTimelineSlot(pnlTimelineSlot14);
+            InitializeTimelineSlot(pnlTimelineSlot15);
+            InitializeTimelineSlot(pnlTimelineSlot16);
+            InitializeTimelineSlot(pnlTimelineSlot17);
+            InitializeTimelineSlot(pnlTimelineSlot18);
+            InitializeTimelineSlot(pnlTimelineSlot19);
+            InitializeTimelineSlot(pnlTimelineSlot20);
+            InitializeTimelineSlot(pnlTimelineSlot21);
+            InitializeTimelineSlot(pnlTimelineSlot22);
+
+            // Setup save button event
+            btnSaveShowIwaa.Click += btnSaveShowIwaa_Click;
+        }
+
+        private void SetupFunctionPanel(Panel panel, string functionName, Color color)
+        {
+            panel.BackColor = color;
+            panel.BorderStyle = BorderStyle.FixedSingle;
+            panel.AllowDrop = false;
+            panel.Tag = functionName;
+            panel.Cursor = Cursors.Hand;
+
+            // Add label to show function name
+            Label lbl = new Label
+            {
+                Text = GetFriendlyName(functionName),
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Arial", 7, FontStyle.Bold),
+                ForeColor = (color == Color.Yellow || color == Color.White || color == Color.LightGreen)
+                    ? Color.Black : Color.White
+            };
+
+            // IMPORTANT: Make the label pass mouse events through to the panel
+            lbl.MouseDown += FunctionPanel_MouseDown;
+
+            panel.Controls.Add(lbl);
+
+            // Mouse events for dragging
+            panel.MouseDown += FunctionPanel_MouseDown;
+        }
+
+        private void InitializeTimelineSlot(Panel panel)
+        {
+            panel.AllowDrop = true;
+            panel.BorderStyle = BorderStyle.Fixed3D;
+            panel.BackColor = Color.WhiteSmoke;
+
+            // Initialize with empty string
+            timelineSlots[panel] = "";
+
+            // Drag events
+            panel.DragEnter += TimelineSlot_DragEnter;
+            panel.DragDrop += TimelineSlot_DragDrop;
+
+            // Right-click to clear
+            panel.MouseClick += TimelineSlot_MouseClick;
+        }
+
+        private void FunctionPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Handle both panel and label clicks
+            Panel panel = sender as Panel;
+
+            // If sender is a label, get its parent panel
+            if (panel == null && sender is Label)
+            {
+                panel = ((Label)sender).Parent as Panel;
+            }
+
+            if (panel != null && panel.Tag != null)
+            {
+                DataObject data = new DataObject(DataFormats.Text, panel.Tag.ToString());
+                panel.DoDragDrop(data, DragDropEffects.Copy);
+            }
+        }
+
+        private void TimelineSlot_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void TimelineSlot_DragDrop(object sender, DragEventArgs e)
+        {
+            Panel slot = sender as Panel;
+            if (slot != null && e.Data.GetDataPresent(DataFormats.Text))
+            {
+                string functionName = e.Data.GetData(DataFormats.Text).ToString();
+
+                // Store the function in the slot
+                timelineSlots[slot] = functionName;
+
+                // Update visual appearance
+                UpdateSlotAppearance(slot, functionName);
+            }
+        }
+
+        private void TimelineSlot_MouseClick(object sender, MouseEventArgs e)
+        {
+            // Right-click to clear a slot
+            if (e.Button == MouseButtons.Right)
+            {
+                Panel slot = sender as Panel;
+                if (slot != null)
+                {
+                    timelineSlots[slot] = "";
+                    slot.BackColor = Color.WhiteSmoke;
+                    slot.Controls.Clear();
+                }
+            }
+        }
+
+        private void UpdateSlotAppearance(Panel slot, string functionName)
+        {
+            // Clear existing controls
+            slot.Controls.Clear();
+
+            // Set background color based on function
+            slot.BackColor = GetFunctionColor(functionName);
+
+            // Add label
+            Label lbl = new Label
+            {
+                Text = GetFriendlyName(functionName),
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Arial", 6, FontStyle.Bold),
+                ForeColor = (functionName.Contains("Yellow") || functionName.Contains("White") || functionName.Contains("On"))
+                    ? Color.Black : Color.White
+            };
+            slot.Controls.Add(lbl);
+        }
+
+        private Color GetFunctionColor(string functionName)
+        {
+            switch (functionName.ToLower())
+            {
+                case "turnred": return Color.Red;
+                case "turngreen": return Color.Green;
+                case "turnblue": return Color.Blue;
+                case "turnwhite": return Color.White;
+                case "turnpurple": return Color.Purple;
+                case "turnorange": return Color.Orange;
+                case "turnyellow": return Color.Yellow;
+                case "turnon": return Color.LightGreen;
+                case "turnoff": return Color.Gray;
+                case "startflashing": return Color.Pink;
+                default: return Color.WhiteSmoke;
+            }
+        }
+
+        private string GetFriendlyName(string functionName)
+        {
+            switch (functionName.ToLower())
+            {
+                case "turnred": return "Red";
+                case "turngreen": return "Green";
+                case "turnblue": return "Blue";
+                case "turnwhite": return "White";
+                case "turnpurple": return "Purple";
+                case "turnorange": return "Orange";
+                case "turnyellow": return "Yellow";
+                case "turnon": return "On";
+                case "turnoff": return "Off";
+                case "startflashing": return "Flash";
+                default: return functionName;
+            }
+        }
+
+        private void btnSaveShowIwaa_Click(object sender, EventArgs e)
+        {
+            // Get all timeline panels in order
+            List<Panel> orderedSlots = new List<Panel>
+            {
+                pnlTimelineSlot1, pnlTimelineSlot2, pnlTimelineSlot3, pnlTimelineSlot4,
+                pnlTimelineSlot5, pnlTimelineSlot6, pnlTimelineSlot7, pnlTimelineSlot8,
+                pnlTimelineSlot9, pnlTimelineSlot10, pnlTimelineSlot11, pnlTimelineSlot12,
+                pnlTimelineSlot13, pnlTimelineSlot14, pnlTimelineSlot15, pnlTimelineSlot16,
+                pnlTimelineSlot17, pnlTimelineSlot18, pnlTimelineSlot19, pnlTimelineSlot20,
+                pnlTimelineSlot21, pnlTimelineSlot22
+            };
+
+            // Build the function sequence string
+            List<string> functions = new List<string>();
+            foreach (Panel slot in orderedSlots)
+            {
+                if (timelineSlots.ContainsKey(slot) && !string.IsNullOrEmpty(timelineSlots[slot]))
+                {
+                    functions.Add(timelineSlots[slot]);
+                }
+            }
+
+            if (functions.Count == 0)
+            {
+                MessageBox.Show("Please add at least one function to the timeline before saving.");
+                return;
+            }
+
+            // Join functions with comma separator
+            string functionSequence = string.Join(", ", functions);
+
+            // Prompt for show name
+            string showName = PromptForShowName();
+            if (string.IsNullOrWhiteSpace(showName))
+            {
+                return; // User cancelled
+            }
+
+            // Save to database
+            SaveShowToDatabase(showName, functionSequence);
+        }
+
+        private string PromptForShowName()
+        {
+            Form prompt = new Form()
+            {
+                Width = 400,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = "Save Show",
+                StartPosition = FormStartPosition.CenterParent,
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+
+            Label textLabel = new Label() { Left = 20, Top = 20, Text = "Enter show name:", AutoSize = true };
+            TextBox textBox = new TextBox() { Left = 20, Top = 45, Width = 340 };
+            Button confirmation = new Button() { Text = "Save", Left = 200, Width = 80, Top = 75, DialogResult = DialogResult.OK };
+            Button cancel = new Button() { Text = "Cancel", Left = 290, Width = 70, Top = 75, DialogResult = DialogResult.Cancel };
+
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            cancel.Click += (sender, e) => { prompt.Close(); };
+
+            prompt.Controls.Add(textLabel);
+            prompt.Controls.Add(textBox);
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(cancel);
+            prompt.AcceptButton = confirmation;
+            prompt.CancelButton = cancel;
+
+            return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
+        }
+
+        private void SaveShowToDatabase(string showName, string functionSequence)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO savedShows (name, functionSequence) VALUES (@name, @functionSequence)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", showName);
+                        cmd.Parameters.AddWithValue("@functionSequence", functionSequence);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show($"Show '{showName}' saved successfully!\n\nSequence: {functionSequence}",
+                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Reload the combo box on the saved shows page
+                            LoadComboBox();
+
+                            // Optionally clear the timeline
+                            if (MessageBox.Show("Do you want to clear the timeline?", "Clear Timeline",
+                                MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                ClearTimeline();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving show to database: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearTimeline()
+        {
+            foreach (var slot in timelineSlots.Keys.ToList())
+            {
+                timelineSlots[slot] = "";
+                slot.BackColor = Color.WhiteSmoke;
+                slot.Controls.Clear();
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -54,6 +381,7 @@ namespace Clubbing_for_coders
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadComboBox();
+            InitializeTimeline();
             tbcPagesIwaa.Appearance = TabAppearance.FlatButtons;
             tbcPagesIwaa.ItemSize = new Size(0, 1);
             tbcPagesIwaa.SizeMode = TabSizeMode.Fixed;
